@@ -54,15 +54,11 @@ dataset = pd.read_csv("train.csv")
 Xdat = pd.read_csv("test.csv")
 nx, ny = dataset.shape
 missing = Xdat.isnull().sum()
-missing = missing[missing > 0]#(ny-1)*0.66]
+missing = missing[missing > 0]
 
 print(Xdat.shape)
 Xdat.drop(missing.index,axis=1,inplace=True)
-#Xdat.dropna(axis=1, inplace=True)
-print(Xdat.shape)
-print(nada)
-#dataset.drop(missing.index,axis=1,inplace=True)
-#Xdat.drop(missing.index,axis=1,inplace=True)
+print(Xdat.shape,'#########')
 data = dataset.values
 X = data[:,:-1]
 Y = list(data[:,-1])
